@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Animations" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,59 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="frame1.png" translatesAutoresizingMaskIntoConstraints="NO" id="me6-Xx-RRB">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" red="0.6583214962121211" green="0.6583214962121211" blue="0.6583214962121211" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nt1-kv-cZy">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="VKC-ri-rCO"/>
+                                    <barButtonItem systemItem="play" id="QAf-tp-ZZ5">
+                                        <connections>
+                                            <action selector="play:" destination="BYZ-38-t0r" id="Mtu-da-Q1G"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="76" style="plain" systemItem="fixedSpace" id="S4L-ov-Kob"/>
+                                    <barButtonItem systemItem="pause" id="85B-6x-PZf">
+                                        <connections>
+                                            <action selector="pause:" destination="BYZ-38-t0r" id="hid-jb-dBQ"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="76" style="plain" systemItem="fixedSpace" id="XDv-hB-3jX"/>
+                                    <barButtonItem systemItem="refresh" id="fbH-Rf-S0f">
+                                        <connections>
+                                            <action selector="reset:" destination="BYZ-38-t0r" id="bNr-xh-9WE"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="mI0-n8-8RL"/>
+                                </items>
+                            </toolbar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Nt1-kv-cZy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="25c-G7-lzV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Nt1-kv-cZy" secondAttribute="trailing" constant="-20" id="IAu-Qy-3Tp"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="me6-Xx-RRB" secondAttribute="trailing" constant="-20" id="Kch-lg-iBW"/>
+                            <constraint firstItem="me6-Xx-RRB" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="PDG-jy-ay3"/>
+                            <constraint firstItem="Nt1-kv-cZy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="XZm-aF-lfs"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="me6-Xx-RRB" secondAttribute="bottom" id="aXl-7n-IOI"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Nt1-kv-cZy" secondAttribute="bottom" id="gh0-ex-3I0"/>
+                            <constraint firstItem="me6-Xx-RRB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="tuA-KZ-6BX"/>
+                            <constraint firstItem="me6-Xx-RRB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wSg-kn-uef"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="minionImage" destination="me6-Xx-RRB" id="c4h-NH-3qu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="440" y="387"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="frame1.png" width="350" height="200"/>
+    </resources>
 </document>
